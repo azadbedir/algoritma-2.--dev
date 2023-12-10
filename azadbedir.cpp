@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// Anahtar ile þifreli mesajlarýn girilmesi
+// Anahtar ile Ã¾ifreli mesajlarÃ½n girilmesi
 void decryptMessage(char cipher[], int key) {
     int length = strlen(cipher);
     const int alphabet_size = 26;
@@ -9,31 +9,31 @@ void decryptMessage(char cipher[], int key) {
     for (int i = 0; i < length; i++) {
         char ch = cipher[i];
 
-        // Küçük harfse
+        // KÃ¼Ã§Ã¼k harfse
         if (ch >= 'a' && ch <= 'z') {
             ch = 'a' + (ch - 'a' - key + alphabet_size) % alphabet_size;
         }
-        // Büyük harfse
+        // BÃ¼yÃ¼k harfse
         else if (ch >= 'A' && ch <= 'Z') {
             ch = 'A' + (ch - 'A' - key + alphabet_size) % alphabet_size;
         }
 
-        // Sonuçlarý güncelle
+        // SonuÃ§larÃ½ gÃ¼ncelle
         cipher[i] = ch;
     }
 }
 
 int main() {
-    // þifreli mesaj
+    // Ã¾ifreli mesaj
     char cipher[] = "Lnlqj nludqj!";
 
-    // Kaydýrma miktarý(anahtar)
+    // KaydÃ½rma miktarÃ½(anahtar)
     int key = 2;
 
-    // þifreli mesajlarýn dizilmesi
+    // Ã¾ifreli mesajlarÃ½n dizilmesi
     decryptMessage(cipher, key);
 
-    // çözülmüþ mesajlarýn yazdýrýlmasý
+    // Ã§Ã¶zÃ¼lmÃ¼Ã¾ mesajlarÃ½n yazdÃ½rÃ½lmasÃ½
     printf("Cozulmus Mesaj: %s\n", cipher);
 
     return 0;
